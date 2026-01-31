@@ -55,26 +55,67 @@
 % This is the abstract. It should concisely state the problem, the approach, and the main results. Keep it under 150--250 words for most venues.
 
 This paper investigates two issues with factorial definition as given in the present day. Particularly a correction is made to the conventional recursive definition and the definition of zero factorial as one ($0! = 1$) is challenged.
-We suggest that zero factorial should be undefined, in the same way that division by zero is undefined. Treating zero factorial as the empty product leads to contradiction when factorial is used as the measure of the number of permutations
+We suggest that zero factorial should be undefined, in the same way that division by zero is undefined and in the same what that the factorial of negative one, and all other negative numbers, is undefined. Treating zero factorial as the empty product leads to contradiction when factorial is used as the measure of the number of permutations
 of the values of a set of given size.
 \end{abstract}
 
 \section{Introduction}
 % Introduce the problem, explain why it matters, and summarize your contribution.
-
-
-
-Cite prior work using \texttt{natbib}~\cite{knuth1984texbook}.
+% Cite prior work using \texttt{natbib}~\cite{knuth1984texbook}.
 
 \section{Related Work}
 % Discuss previous approaches and how your work differs.
+
+The \texttt{Wikipedia Factorial article}~\cite{wikipedia_factorial} gives the definition as:
+
+\begin{align}
+n! &= n  \times  (n-1)  \times (n-2)  \times  (n-3) \times \cdots \times  3 \times  2 \times  1 \\
+   &= n\times(n-1)!
+\end{align}
+
+With the example given:
+
+\begin{equation}
+5! = 5\times 4! = 5  \times  4  \times  3  \times  2  \times  1 = 120.
+\end{equation}
+
+The problem with this formulation is that the recursive definition does not nominate a base case. What the notation is trying to say, but doesn't, is:
+
+\begin{equation}
+n! =
+\begin{cases}
+1, & \text{if } n = 0 \\
+n \times (n-1)!,  & \text{if } n >= 1
+\end{cases}
+\end{equation}
+
+Without the base case the recursive definition extends into the negative numbers, -1, -2, etc. through to negative infinity. Because of the multiplication by negative numbers if this happened the result would "oscillate" between positive and negative infinities and is not well defined.
+
+From \texttt{a question to ChatGPT}~\cite{chatgpt_factorial} we get this explanation:
+
+\begin{quote}
+Now ask: how many ways are there to arrange zero objects?
+
+There is exactly one way:
+
+do nothing.
+
+This is called the empty permutation.
+So the count must be:
+
+$0! = 1$
+
+If it were 0, it would mean ``there are no ways to do nothing,'' which is not how counting works.
+\end{quote}
+
+The problem with saying that selecting no items counts as one is that this would then need to carry over into counting other sets. For instance, for {1} we could select 1, and select nothing, which is 2; then for {1,2} we could select {1,2} and {2,1} and nothing, which is 3; then for {1,2,3} we could select {1,2,3}, {1,3,2}, {2,1,3}, {2,3,1}, {3,1,2}, {3,2,1}, and nothing which is 7; and so on. That is to say, we can't say an empty selection counts for one when $n = 0$ but not when $n > 0$; either an empty selection counts or it does not.
 
 \section{Methodology}
 Describe your model, experiment, or theoretical framework.
 
 \subsection{Mathematical Formulation}
 
-A revised definition for factorial is given for positive integers $n$:
+A revised definition for factorial is proposed. Particularly, for positive integers $n$, the factorial is given as:
 
 \begin{equation}
 n! =
@@ -84,27 +125,16 @@ n \times (n-1)!,  & \text{if } n > 1
 \end{cases}
 \end{equation}
 
-\section{Results}
-Present experimental or analytical results.
+The is a clean and complete recursive definition for factorial which leaves zero factorial undefined.
 
-\begin{table}[h]
-\centering
-\caption{Example Results}
-\begin{tabular}{lcc}
-\toprule
-Method & Accuracy & Time (s) \\
-\midrule
-Method A & 95\% & 1.2 \\
-Method B & 92\% & 0.8 \\
-\bottomrule
-\end{tabular}
-\end{table}
+\section{Results}
+% Present experimental or analytical results.
 
 \section{Discussion}
-Interpret the results and discuss limitations.
+% Interpret the results and discuss limitations.
 
 \section{Conclusion}
-Summarize findings and outline future work.
+% Summarize findings and outline future work.
 
 % ----------------------------
 % Bibliography
