@@ -1,2 +1,3 @@
-# regarding-zero-factorial
-Fixing some gremlins in factorial
+# Regarding Zero Factorial
+
+Fixing some gremlins in factorial.

@@ -1,0 +1,115 @@
+\documentclass[11pt,a4paper]{article}
+
+% ----------------------------
+% Encoding and language
+% ----------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+% ----------------------------
+% Page layout
+% ----------------------------
+\usepackage[a4paper,margin=1in]{geometry}
+
+% ----------------------------
+% Mathematics
+% ----------------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% ----------------------------
+% Figures and tables
+% ----------------------------
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% ----------------------------
+% References
+% ----------------------------
+\usepackage[numbers,sort&compress]{natbib}
+
+% ----------------------------
+% Hyperlinks (load late)
+% ----------------------------
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+% ----------------------------
+% Title information
+% ----------------------------
+\title{Regarding Zero Factorial}
+\author{
+  John Elliot V \\
+  \small \texttt{jj5@jj5.net}
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+% This is the abstract. It should concisely state the problem, the approach, and the main results. Keep it under 150--250 words for most venues.
+
+This paper investigates two issues with factorial definition as given in the present day. Particularly a correction is made to the conventional recursive definition and the definition of zero factorial as one ($0! = 1$) is challenged.
+We suggest that zero factorial should be undefined, in the same way that division by zero is undefined. Treating zero factorial as the empty product leads to contradiction when factorial is used as the measure of the number of permutations
+of the values of a set of given size.
+\end{abstract}
+
+\section{Introduction}
+% Introduce the problem, explain why it matters, and summarize your contribution.
+
+
+
+Cite prior work using \texttt{natbib}~\cite{knuth1984texbook}.
+
+\section{Related Work}
+% Discuss previous approaches and how your work differs.
+
+\section{Methodology}
+Describe your model, experiment, or theoretical framework.
+
+\subsection{Mathematical Formulation}
+
+A revised definition for factorial is given for positive integers $n$:
+
+\begin{equation}
+n! =
+\begin{cases}
+1, & \text{if } n = 1 \\
+n \times (n-1)!,  & \text{if } n > 1
+\end{cases}
+\end{equation}
+
+\section{Results}
+Present experimental or analytical results.
+
+\begin{table}[h]
+\centering
+\caption{Example Results}
+\begin{tabular}{lcc}
+\toprule
+Method & Accuracy & Time (s) \\
+\midrule
+Method A & 95\% & 1.2 \\
+Method B & 92\% & 0.8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Discussion}
+Interpret the results and discuss limitations.
+
+\section{Conclusion}
+Summarize findings and outline future work.
+
+% ----------------------------
+% Bibliography
+% ----------------------------
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
